@@ -1,0 +1,278 @@
+@charset "UTF-8";
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  -webkit-user-drag: none;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background-color: #292929;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.thanks,
+.text {
+  position: absolute;
+  bottom: 5px;
+  padding: 10px;
+  color: #fff;
+  font-size: 14px;
+  font-family: sans-serif;
+  z-index: 10;
+}
+
+.thanks {
+  right: 5px;
+  background-color: #3a0839;
+}
+
+.text {
+  left: 5px;
+}
+
+.rect {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: translate3d(0, 100%, 0);
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+}
+.rect--blue {
+  background-color: #0dcaff;
+  z-index: 1;
+}
+.rect--red {
+  background-color: #ff4e48;
+  z-index: 2;
+}
+.rect--black {
+  background-color: #292929;
+  z-index: 3;
+}
+
+.n-switch {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 450px;
+  height: 190px;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+.n-switch__wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+/**
+* Joycons
+*/
+.joycon {
+  position: absolute;
+  width: 60px;
+  height: 100%;
+  top: 0;
+}
+.joycon--left {
+  left: 0;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+  background-color: #0dcaff;
+}
+.joycon--right {
+  right: 0;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+  background-color: #ff4e48;
+}
+
+/**
+* Stick
+*/
+.stick {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  left: 50%;
+  background-color: #1b1b1b;
+  border: 3px solid #101010;
+  border-radius: 50%;
+  transform: translate(-50%, 0);
+}
+.stick--left {
+  top: 40px;
+  margin-left: 2px;
+}
+.stick--right {
+  bottom: 75px;
+  margin-left: -2px;
+}
+
+/**
+* Pad
+*/
+.pad {
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  left: 12px;
+}
+.pad--left {
+  top: 80px;
+}
+.pad--left span::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 5px;
+  color: #383838;
+  transform: translate(-50%, -50%);
+}
+.pad--left span:nth-child(1)::before {
+  content: "▲";
+  margin-top: -1px;
+}
+.pad--left span:nth-child(2)::before {
+  content: "▶";
+  margin-left: 1px;
+}
+.pad--left span:nth-child(3)::before {
+  content: "▼";
+  margin-top: 1px;
+}
+.pad--left span:nth-child(4)::before {
+  content: "◀";
+  margin-left: -1px;
+}
+.pad--right {
+  top: 27px;
+  left: 6px;
+}
+.pad span {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #1b1b1b;
+  border: 1px solid #101010;
+  color: #fff;
+  font-size: 5px;
+  text-align: center;
+  font-family: sans-serif;
+  line-height: 12px;
+  text-transform: uppercase;
+}
+.pad span:nth-child(1) {
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.pad span:nth-child(2) {
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
+}
+.pad span:nth-child(3) {
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.pad span:nth-child(4) {
+  left: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+/**
+* Screen
+*/
+.screen {
+  position: absolute;
+  left: 50%;
+  width: 330px;
+  height: 100%;
+  transform: translate(-50%, 0);
+}
+.screen__wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #1b1b1b;
+}
+.screen__wrapper::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 93%;
+  height: 91%;
+  background-color: #1f1f1f;
+  transform: translate(-50%, -50%);
+}
+
+/**
+* Buttons
+*/
+.btn-photo,
+.btn-home {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  bottom: 48px;
+  background-color: #1b1b1b;
+  border: 1px solid #101010;
+}
+
+.btn-photo {
+  right: 11px;
+}
+
+.btn-home {
+  left: 12px;
+  border-radius: 50%;
+}
+
+.btn-select,
+.btn-start {
+  position: absolute;
+  top: 18px;
+  width: 10px;
+  height: 2px;
+  background-color: #1b1b1b;
+}
+
+.btn-select {
+  right: 4px;
+}
+
+.btn-start {
+  left: 4px;
+}
+.btn-start::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2px;
+  height: 10px;
+  background-color: #1b1b1b;
+  transform: translate(-50%, -50%);
+}
